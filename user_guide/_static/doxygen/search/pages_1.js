@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['examples_0',['examples',['../md_examples_2capillary_2README.html',1,'Capillary examples'],['../md_examples_2README.html',1,'Examples']]]
+  ['hemocell_20changelog_0',['HemoCell Changelog',['../md_CHANGELOG.html',1,'']]]
 ];

@@ -1,7 +1,0 @@
-<map id="clusters.SuperMUC" name="clusters.SuperMUC">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,152,151,177"/>
-<area shape="rect" id="Node000002" href="$classclusters_1_1Cluster.html" title=" " alt="" coords="17,79,139,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,118,81,152,75,152,75,118"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="38,5,118,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,44,81,79,75,79,75,44"/>
-</map>

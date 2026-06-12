@@ -1,0 +1,25 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="plb::DomainFunctional3D",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge68_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="SphereShapeDomain3D\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classSphereShapeDomain3D.html",tooltip="A functional, used to instantiate bounce-back nodes at the locations of the sphere."];
+  Node0 -> Node2 [id="edge69_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="StenosisShapeDomain3D\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classStenosisShapeDomain3D.html",tooltip="A functional, used to instantiate bounce-back nodes at the locations of the sphere."];
+  Node0 -> Node3 [id="edge70_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TriangleShapeDomain3D\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTriangleShapeDomain3D.html",tooltip="Geometry definition for a constricted capillary channel."];
+  Node0 -> Node4 [id="edge71_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="geom::BoxDomain",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgeom_1_1BoxDomain.html",tooltip="A domain functional indicating true inside a rectangular box. The BoxDomain functional evaluates to t..."];
+  Node0 -> Node5 [id="edge72_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="geom::Difference",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgeom_1_1Difference.html",tooltip="Create the boolean difference of the first and subsequent domains. This creates the boolean differenc..."];
+  Node0 -> Node6 [id="edge73_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="geom::EllipseDomain",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgeom_1_1EllipseDomain.html",tooltip="An ellipsoidal domain functional returning true inside the ellipsoid. The EllipseDomain represents an..."];
+  Node0 -> Node7 [id="edge74_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="geom::Intersection",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgeom_1_1Intersection.html",tooltip="The boolean intersection of a number of domain functionals. This creates the boolean intersection bet..."];
+  Node0 -> Node8 [id="edge75_Node000000_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="geom::Union",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classgeom_1_1Union.html",tooltip="The union of multiple domain functionals. This domain functional builds the union of any number of do..."];
+}

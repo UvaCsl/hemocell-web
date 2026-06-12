@@ -14,5 +14,5 @@ var searchData=
   ['loaddirectories_11',['loadDirectories',['../namespacehemo.html#a93fe9c71c04283554e4172034e710c06',1,'hemo']]],
   ['loadglobalconfigvalues_12',['loadGlobalConfigValues',['../namespacehemo.html#aa1bb58f6b4f14996478c8e08caefab2a',1,'hemo']]],
   ['loadparticles_13',['loadParticles',['../classhemo_1_1HemoCell.html#a65a0a3b07e02204cd43db4ab09e7b30c',1,'hemo::HemoCell']]],
-  ['logfile_14',['logfile',['../classhemo_1_1Logfile.html#a6c5f1372d1ae501ef7024f8f4ae4f39c',1,'hemo::Logfile::Logfile()'],['../classhemo_1_1Logfile.html#a4fdbd68346ee3836155bf67010e1ba43',1,'hemo::Logfile::Logfile(std::fstream &amp;logfile_)']]]
+  ['logfile_14',['Logfile',['../classhemo_1_1Logfile.html#a6c5f1372d1ae501ef7024f8f4ae4f39c',1,'hemo::Logfile::Logfile()'],['../classhemo_1_1Logfile.html#a4fdbd68346ee3836155bf67010e1ba43',1,'hemo::Logfile::Logfile(std::fstream &amp;logfile_)']]]
 ];

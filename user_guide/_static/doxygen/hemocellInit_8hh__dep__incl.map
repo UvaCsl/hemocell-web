@@ -1,9 +1,0 @@
-<map id="helper/hemocellInit.hh" name="helper/hemocellInit.hh">
-<area shape="rect" id="Node000001" title=" " alt="" coords="257,5,425,31"/>
-<area shape="rect" id="Node000002" href="$cellCollision__interior__viscosity_8cpp.html" title=" " alt="" coords="5,79,229,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,38,187,81,185,76,297,33"/>
-<area shape="rect" id="Node000003" href="$oneCellShear_8cpp.html" title=" " alt="" coords="253,86,429,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="344,44,344,86,339,86,339,44"/>
-<area shape="rect" id="Node000004" href="$test__oneCellShear_8cpp.html" title=" " alt="" coords="454,86,661,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="384,33,511,83,509,88,382,38"/>
-</map>

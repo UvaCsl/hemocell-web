@@ -10,5 +10,5 @@ var searchData=
   ['update_5fpreinlet_5fppc_7',['update_preinlet_ppc',['../classhemo_1_1HemoCellParticleField.html#abe41587786265dc5d321d51121ae6947',1,'hemo::HemoCellParticleField']]],
   ['update_5ftemplate_5ffile_8',['update_template_file',['../namespaceweakscaling.html#a387ca332f8f437e480864b91ced00d78',1,'weakscaling']]],
   ['updatelecurdisplacement_9',['updateLECurDisplacement',['../classhemo_1_1LeesEdwardsBC.html#a9b61355311cfa56695fe3a4af470bbfc',1,'hemo::LeesEdwardsBC']]],
-  ['updateresidencetime_10',['updateresidencetime',['../classhemo_1_1HemoCellFields.html#a90a9de30884f0510eea687c8571ddb32',1,'hemo::HemoCellFields::updateResidenceTime()'],['../classhemo_1_1HemoCellParticleField.html#abe95ccf2f1575106504ac2230386c5fc',1,'hemo::HemoCellParticleField::updateResidenceTime()']]]
+  ['updateresidencetime_10',['updateResidenceTime',['../classhemo_1_1HemoCellFields.html#a90a9de30884f0510eea687c8571ddb32',1,'hemo::HemoCellFields::updateResidenceTime()'],['../classhemo_1_1HemoCellParticleField.html#abe95ccf2f1575106504ac2230386c5fc',1,'hemo::HemoCellParticleField::updateResidenceTime()']]]
 ];

@@ -1,51 +1,488 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>HemoCell Getting Started &#8212; HemoCell 2.8 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
-    
-    <script src="_static/documentation_options.js?v=4348de45"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <title>HemoCell Getting Started &#8212; HemoCell Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a72db6d2"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=9e1b69ee"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'QuickStart';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Example cases" href="hemocell_cases.html" />
-    <link rel="prev" title="HemoCell" href="index.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="hemocell_cases.html" title="Example cases"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="HemoCell"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">HemoCell 2.8 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">HemoCell Getting Started</a></li> 
-      </ul>
-    </div>  
+    <link rel="next" title="Creating your own HemoCell Case" href="Case.html" />
+    <link rel="prev" title="HemoCell" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.8" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">HemoCell</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/UvaCsl/HemoCell" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://hemocell.eu" title="Website" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-globe fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Website</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    HemoCell
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">HemoCell Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Case.html">Creating your own HemoCell Case</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="hemocell_cases.html">Example cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="cases/onecellshear.html">One shearing cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/stretchcell.html">One stretching cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/parachuting.html">A parachuting cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/cellCollision_interior_viscosity.html">Colliding cells with interior viscosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/pipeflow.html">Pipe flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/pipeflow_with_preinlet.html">Pipe flow with periodic inflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/capillary_flow.html">Capillary flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/more_examples.html">More example cases</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="concepts/index.html">Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts/overview.html">Overview: how HemoCell works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/units_and_scaling.html">Units and scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/cell_model.html">The cell model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/parallelism.html">Parallelism and performance</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="advanced_cases.html">Advanced use-cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced_cases/custom_cells.html">Custom cells and reading cells from STL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_cases/pure_flow_simulations.html">Running a pure fluid flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_cases/repulsion.html">Repulsive forces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_cases/saving_csv_output_only.html">Saving only the CSV output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_cases/profiler.html">Profiling Hemocell performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization and post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helper_scripts.html">Helper scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utility tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="reference/index.html">Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="xml_files.html">Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/hemocell_api.html">The HemoCell API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/outputs.html">Output fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/mechanical_models.html">Mechanical (cell) models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hemocell_doxygen.html">HemoCell Doxygen Documentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="community/index.html">Community</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_mistakes.html">Common mistakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Downloads.html">Downloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="community/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="community/citing.html">Citing HemoCell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="community/acknowledgments.html">Acknowledgments</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell/edit/master/doc/user_guide/QuickStart.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell/issues/new?title=Issue%20on%20page%20%2FQuickStart.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/QuickStart.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>HemoCell Getting Started</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-hemocell-from-source">Setting up HemoCell from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-hemocell-from-source">Compiling HemoCell from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-initial-positions-for-cells">Generating initial positions for cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-hemocell-case">Running a HemoCell case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-output-folder">Case output folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing-the-output-of-a-hemocell-case">Post-processing the output of a HemoCell case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resuming-from-a-checkpoint">Resuming from a checkpoint</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="hemocell-getting-started">
-<h1>HemoCell Getting Started<a class="headerlink" href="#hemocell-getting-started" title="Link to this heading">¶</a></h1>
+<h1>HemoCell Getting Started<a class="headerlink" href="#hemocell-getting-started" title="Link to this heading">#</a></h1>
 <section id="setting-up-hemocell-from-source">
-<span id="from-source"></span><h2>Setting up HemoCell from source<a class="headerlink" href="#setting-up-hemocell-from-source" title="Link to this heading">¶</a></h2>
+<span id="from-source"></span><h2>Setting up HemoCell from source<a class="headerlink" href="#setting-up-hemocell-from-source" title="Link to this heading">#</a></h2>
 <p>The following packages are requirements for compiling and/or running HemoCell from source.</p>
-<table class="docutils align-default">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Required package</p></th>
 <th class="head"><p>Tested versions</p></th>
@@ -56,7 +493,7 @@
 <td><p>4.1.6</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://gcc.gnu.org/">GCC</a></p></td>
-<td><p>12.3.0</p></td>
+<td><p>13.3.0</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://cmake.org/">CMake</a></p></td>
 <td><p>3.28.3</p></td>
@@ -71,13 +508,14 @@
 <td><p>2.6.0</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://palabos.unige.ch/">Palabos</a></p></td>
-<td><p>2.2.1</p></td>
+<td><p>2.3.0</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview">Parmetis</a> (optional)</p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/KarypisLab/ParMETIS">Parmetis</a> (optional)</p></td>
 <td><p>4.0.3</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The currently tested versions are listed. Older/newer versions might work as well.
@@ -87,7 +525,7 @@ Avoid OpenMPI 2.0.X as in our experience it introduces memory leaks.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> \
       <span class="n">make</span> \
       <span class="n">cmake</span> \
-      <span class="n">g</span><span class="o">++-</span><span class="mi">12</span> \
+      <span class="n">g</span><span class="o">++</span> \
       <span class="n">libopenmpi</span><span class="o">-</span><span class="n">dev</span> \
       <span class="n">libhdf5</span><span class="o">-</span><span class="n">dev</span> \
       <span class="n">patch</span> \
@@ -95,7 +533,7 @@ Avoid OpenMPI 2.0.X as in our experience it introduces memory leaks.</p>
 </pre></div>
 </div>
 <p>The main external dependency <a class="reference external" href="https://palabos.unige.ch/">Palabos</a> has to be added and patched.
-We currently support the <code class="docutils literal notranslate"><span class="pre">v2.2.1</span></code> version with an additional small patch. This can be done in two ways.</p>
+We currently support the <code class="docutils literal notranslate"><span class="pre">v2.3.0</span></code> version with an additional small patch. This can be done in two ways.</p>
 <p>1. To automatically download this specific Palabos version and apply our patch, run the setup script
 <code class="docutils literal notranslate"><span class="pre">hemocell/setup.sh</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># from the hemocell/ root directory execute</span>
@@ -105,8 +543,8 @@ We currently support the <code class="docutils literal notranslate"><span class=
 <p>At this point HemoCell should be ready for compilation and development, you can move on to the next section below.</p>
 <p>2. Alternatively, you can opt to manually download Palabos through their <a class="reference external" href="https://gitlab.com/unigespc/palabos/-/releases">releases</a>. This is useful if you want to use a different version. After downloading, Palabos
 should be extracted to <code class="docutils literal notranslate"><span class="pre">./hemocell/palabos</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">xzf</span> <span class="n">palabos</span><span class="o">-</span><span class="n">v2</span><span class="mf">.2.1</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
-<span class="n">mv</span> <span class="n">palabos</span><span class="o">-</span><span class="n">v2</span><span class="mf">.2.1</span> <span class="o">./</span><span class="n">hemocell</span><span class="o">/</span><span class="n">palabos</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">xzf</span> <span class="n">palabos</span><span class="o">-</span><span class="n">v2</span><span class="mf">.3.0</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">mv</span> <span class="n">palabos</span><span class="o">-</span><span class="n">v2</span><span class="mf">.3.0</span> <span class="o">./</span><span class="n">hemocell</span><span class="o">/</span><span class="n">palabos</span>
 </pre></div>
 </div>
 <p>After this Palabos must be patched, see <a class="reference internal" href="helper_scripts.html#patching-palabos"><span class="std std-ref">hemocell/patch/patchPLB.sh</span></a>. This can be
@@ -117,8 +555,9 @@ so:</p>
 </div>
 <p>The patching should succeed even though there might be an offset in some files.
 At this point HemoCell should be ready for compilation and development.</p>
-<p>(Optional) <a class="reference external" href="http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview">Parmetis</a> is used for upcoming load-balancing routines (in development atm.).
-It can be installed via adding <code class="docutils literal notranslate"><span class="pre">libparmetis-dev</span></code> on Ubuntu, or it can be downloaded from their <a class="reference external" href="http://glaros.dtc.umn.edu/gkhome/metis/parmetis/download">downloads</a>. Due to the
+<p>(Optional) <a class="reference external" href="https://github.com/KarypisLab/ParMETIS">Parmetis</a> is used for upcoming load-balancing routines (in development atm.).
+It can be installed via adding <code class="docutils literal notranslate"><span class="pre">libparmetis-dev</span></code> on Ubuntu, or it can be downloaded from the
+<a class="reference external" href="https://github.com/KarypisLab/ParMETIS">ParMETIS repository</a>. Due to the
 license of Parmetis we cannot distribute it with hemocell. The Parmetis
 download should be copied to the  <code class="docutils literal notranslate"><span class="pre">./hemocell/external/</span></code> directory. If you
 need it because you want load balancing to be enabled you have to extract it
@@ -128,7 +567,7 @@ with:</p>
 </div>
 </section>
 <section id="compiling-hemocell-from-source">
-<span id="compilation"></span><h2>Compiling HemoCell from source<a class="headerlink" href="#compiling-hemocell-from-source" title="Link to this heading">¶</a></h2>
+<span id="compilation"></span><h2>Compiling HemoCell from source<a class="headerlink" href="#compiling-hemocell-from-source" title="Link to this heading">#</a></h2>
 <p>HemoCell can be compiled from source using <code class="docutils literal notranslate"><span class="pre">CMake</span></code>. In the root directory
 <code class="docutils literal notranslate"><span class="pre">./hemocell/</span></code>, execute the following instructions to configure and compile
 the HemoCell library:</p>
@@ -174,7 +613,7 @@ tests:</p>
 </div>
 </section>
 <section id="generating-initial-positions-for-cells">
-<span id="packcells"></span><h2>Generating initial positions for cells<a class="headerlink" href="#generating-initial-positions-for-cells" title="Link to this heading">¶</a></h2>
+<span id="packcells"></span><h2>Generating initial positions for cells<a class="headerlink" href="#generating-initial-positions-for-cells" title="Link to this heading">#</a></h2>
 <p>At some point you might want to run a slightly different geometry, or run your
 simulation with a different concentration of cells. For this we offer the
 <code class="docutils literal notranslate"><span class="pre">packCells</span></code> tool which can be found in the <code class="docutils literal notranslate"><span class="pre">./hemocell/packCells</span></code> directory.</p>
@@ -196,7 +635,7 @@ them.</p>
 </div>
 </section>
 <section id="running-a-hemocell-case">
-<h2>Running a HemoCell case<a class="headerlink" href="#running-a-hemocell-case" title="Link to this heading">¶</a></h2>
+<h2>Running a HemoCell case<a class="headerlink" href="#running-a-hemocell-case" title="Link to this heading">#</a></h2>
 <p>A HemoCell case should be run within the folder containing the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> and
 <code class="docutils literal notranslate"><span class="pre">.pos</span></code> files. You can specify the number of desired processors with
 <code class="docutils literal notranslate"><span class="pre">mpirun</span></code>. The only argument for the case should be the <code class="docutils literal notranslate"><span class="pre">config.xml</span></code> file.
@@ -207,7 +646,7 @@ A typical command looks like this:</p>
 </div>
 </section>
 <section id="case-output-folder">
-<h2>Case output folder<a class="headerlink" href="#case-output-folder" title="Link to this heading">¶</a></h2>
+<h2>Case output folder<a class="headerlink" href="#case-output-folder" title="Link to this heading">#</a></h2>
 <p>The output of a case is usually written to the <code class="docutils literal notranslate"><span class="pre">&lt;case&gt;/tmp</span></code> folder. The
 checkpoints are the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">.dat</span></code> files. When a new checkpoint is
 created they are moved to <code class="docutils literal notranslate"><span class="pre">.xml.old</span> <span class="pre">and</span> <span class="pre">``.dat.old</span></code>. The hdf5 output is stored
@@ -215,13 +654,13 @@ per timestep in <code class="docutils literal notranslate"><span class="pre">tmp
 <a class="reference internal" href="#read-output"><span class="std std-ref">Post-processing the output of a HemoCell case</span></a> and <a class="reference internal" href="helper_scripts.html#bpp"><span class="std std-ref">hemocell/scripts/batchPostProcess.sh</span></a> for more info.</p>
 </section>
 <section id="post-processing-the-output-of-a-hemocell-case">
-<span id="read-output"></span><h2>Post-processing the output of a HemoCell case<a class="headerlink" href="#post-processing-the-output-of-a-hemocell-case" title="Link to this heading">¶</a></h2>
+<span id="read-output"></span><h2>Post-processing the output of a HemoCell case<a class="headerlink" href="#post-processing-the-output-of-a-hemocell-case" title="Link to this heading">#</a></h2>
 <p>A HemoCell case produces multiple types of output by default. The simplest is the <code class="docutils literal notranslate"><span class="pre">csv</span></code>
 output which consists of all the information about cells in csv files.
 On older HemoCell versions you might want to merge the csv files into a single one per time-step with the script <a class="reference internal" href="helper_scripts.html#ccsv"><span class="std std-ref">hemocell/scripts/CellInfoMergeCSV.sh</span></a>
 in the <code class="docutils literal notranslate"><span class="pre">tmp</span></code> directory. Note: HemoCell now does this automatically.</p>
 <p>The more detailed output on both the fluid field and particle field is stored in compressed
-<code class="docutils literal notranslate"><span class="pre">hdf5</span></code> format. We recommend using the <a class="reference external" href="http://xdmf.org/index.php/Main_Page">XDMF</a> format to make these
+<code class="docutils literal notranslate"><span class="pre">hdf5</span></code> format. We recommend using the <a class="reference external" href="https://www.xdmf.org/">XDMF</a> format to make these
 readable for visualization tools such as <a class="reference external" href="https://paraview.org">Paraview</a> . To generate <code class="docutils literal notranslate"><span class="pre">*.xmf</span></code> files run the <a class="reference internal" href="helper_scripts.html#bpp"><span class="std std-ref">hemocell/scripts/batchPostProcess.sh</span></a>
 script, e.g. from the folder of a case:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">../../</span><span class="n">scripts</span><span class="o">/</span><span class="n">batchPostProcess</span><span class="o">.</span><span class="n">sh</span>
@@ -235,7 +674,7 @@ Please select the <em>Legacy</em> XDMF file format when loading them in.</p>
 </div>
 </section>
 <section id="resuming-from-a-checkpoint">
-<h2>Resuming from a checkpoint<a class="headerlink" href="#resuming-from-a-checkpoint" title="Link to this heading">¶</a></h2>
+<h2>Resuming from a checkpoint<a class="headerlink" href="#resuming-from-a-checkpoint" title="Link to this heading">#</a></h2>
 <p>To resume from a checkpoint you should run the executable from the directory you
 ran it originally from (so the directory with the <code class="docutils literal notranslate"><span class="pre">.xml</span></code> and <code class="docutils literal notranslate"><span class="pre">.pos</span></code> files
 visible. The first argument should be <code class="docutils literal notranslate"><span class="pre">tmp{_x}/checkpoint/checkpoint.xml</span></code> instead of
@@ -250,81 +689,111 @@ to be the same as the number of processors used for the initial run.</p>
 </section>
 
 
-            <div class="clearer"></div>
-          </div>
-        </div>
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">HemoCell</p>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/logo.png" alt="Logo"/>
-            </a></p>
-  <div>
-    <h3><a href="index.html">Table of Contents</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">HemoCell Getting Started</a><ul>
-<li><a class="reference internal" href="#setting-up-hemocell-from-source">Setting up HemoCell from source</a></li>
-<li><a class="reference internal" href="#compiling-hemocell-from-source">Compiling HemoCell from source</a></li>
-<li><a class="reference internal" href="#generating-initial-positions-for-cells">Generating initial positions for cells</a></li>
-<li><a class="reference internal" href="#running-a-hemocell-case">Running a HemoCell case</a></li>
-<li><a class="reference internal" href="#case-output-folder">Case output folder</a></li>
-<li><a class="reference internal" href="#post-processing-the-output-of-a-hemocell-case">Post-processing the output of a HemoCell case</a></li>
-<li><a class="reference internal" href="#resuming-from-a-checkpoint">Resuming from a checkpoint</a></li>
+    </a>
+    <a class="right-next"
+       href="Case.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Creating your own HemoCell Case</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-hemocell-from-source">Setting up HemoCell from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-hemocell-from-source">Compiling HemoCell from source</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-initial-positions-for-cells">Generating initial positions for cells</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-a-hemocell-case">Running a HemoCell case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-output-folder">Case output folder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-processing-the-output-of-a-hemocell-case">Post-processing the output of a HemoCell case</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resuming-from-a-checkpoint">Resuming from a checkpoint</a></li>
 </ul>
-</li>
-</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By HemoCell Developers
+</p>
 
   </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="index.html"
-                          title="previous chapter">HemoCell</a></p>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Computational Science Lab, University of Amsterdam.
+      <br/>
+    
+  </p>
+
   </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="hemocell_cases.html"
-                          title="next chapter">Example cases</a></p>
+  
+  <div class="footer-item">
+    
   </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/QuickStart.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
+          </footer>
+        
+
+      </main>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="hemocell_cases.html" title="Example cases"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="HemoCell"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">HemoCell 2.8 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">HemoCell Getting Started</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Computational Science Lab, University of Amsterdam.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
-    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

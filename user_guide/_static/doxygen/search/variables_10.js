@@ -2,7 +2,7 @@ var searchData=
 [
   ['radius_0',['radius',['../classhemo_1_1WbcHighOrderModel.html#add80e41bd803e73f65e2aa9f4ca62a09',1,'hemo::WbcHighOrderModel']]],
   ['radiuscyl_1',['radiusCyl',['../classStenosisShapeDomain3D.html#a26e2b178f223845a7b53c8a6534663b8',1,'StenosisShapeDomain3D']]],
-  ['radiussqr_2',['radiussqr',['../classSphereShapeDomain3D.html#ac37cb97ad2c32b54d261e2fc67010b1a',1,'SphereShapeDomain3D::radiusSqr'],['../classStenosisShapeDomain3D.html#adef38c38de326b143942c314b8937dcc',1,'StenosisShapeDomain3D::radiusSqr']]],
+  ['radiussqr_2',['radiusSqr',['../classSphereShapeDomain3D.html#ac37cb97ad2c32b54d261e2fc67010b1a',1,'SphereShapeDomain3D::radiusSqr'],['../classStenosisShapeDomain3D.html#adef38c38de326b143942c314b8937dcc',1,'StenosisShapeDomain3D::radiusSqr']]],
   ['re_3',['re',['../classhemo_1_1Parameters.html#a9167d1be9abbd4c333e3f41894d1c14d',1,'hemo::Parameters']]],
   ['recvbuffers_4',['recvBuffers',['../classhemo_1_1HemoCellFields.html#a4a69c2afc2bef4516310a018fa997820',1,'hemo::HemoCellFields']]],
   ['repulsionconstant_5',['repulsionConstant',['../classhemo_1_1HemoCellFields.html#aebf9f6897146dd0d7a5595c5140d517d',1,'hemo::HemoCellFields']]],

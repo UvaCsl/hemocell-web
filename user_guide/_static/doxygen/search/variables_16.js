@@ -7,7 +7,7 @@ var searchData=
   ['xbottomr_4',['xbottomR',['../classStenosisShapeDomain3D.html#ad06bf0a20909e875b1b7c10e8bdd0be6',1,'StenosisShapeDomain3D']]],
   ['xcircl_5',['xcircL',['../classStenosisShapeDomain3D.html#ad25405e8a25d5b39bb2807ab5c4de58b',1,'StenosisShapeDomain3D']]],
   ['xcircr_6',['xcircR',['../classStenosisShapeDomain3D.html#a51b7e75ea6d1ea769196caf2101b72e7',1,'StenosisShapeDomain3D']]],
-  ['xdim_7',['xdim',['../classanalyseVelocity_1_1Fluid.html#a8d3f41220a19ef3b8ee1020c547fa962',1,'analyseVelocity::Fluid']]],
+  ['xdim_7',['xdim',['../classanalyseVelocity_1_1Fluid.html#aaeea0454c7a5c114c78866fd6e59c7d4',1,'analyseVelocity::Fluid']]],
   ['xtopl_8',['xtopL',['../classStenosisShapeDomain3D.html#a44ef189db708560efee18762ec19d1d9',1,'StenosisShapeDomain3D']]],
   ['xtopr_9',['xtopR',['../classStenosisShapeDomain3D.html#aa36cc1fd89cce5655aed11f2e20a6bf9',1,'StenosisShapeDomain3D']]]
 ];

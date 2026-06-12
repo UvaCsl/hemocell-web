@@ -1,115 +1,199 @@
+
 <!DOCTYPE html>
 
-<html lang="en" data-content_root="./">
+
+<html lang="en" data-content_root="./" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>HemoCell &#8212; HemoCell 2.8 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
-    
-    <script src="_static/documentation_options.js?v=4348de45"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <title>HemoCell &#8212; HemoCell Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a72db6d2"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=9e1b69ee"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="HemoCell Getting Started" href="QuickStart.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="QuickStart.html" title="HemoCell Getting Started"
-             accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">HemoCell 2.8 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">HemoCell</a></li> 
-      </ul>
-    </div>  
+    <link rel="next" title="HemoCell Getting Started" href="QuickStart.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.8" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <section id="hemocell">
-<h1>HemoCell<a class="headerlink" href="#hemocell" title="Link to this heading">¶</a></h1>
-<p>HemoCell is a parallel computing framework for simulation of dense deformable
-capsule suspensions, with special emphasis on blood flows and blood related
-vesicles (cells). The library implements validated mechanical models for
-Red Blood Cells (RBCs) and is capable of reproducing emergent transport
-characteristics of such complex cellular systems <span id="id1">[<a class="reference internal" href="#id8" title="Gábor Závodszky, Britt van Rooij, Victor Azizi, and Alfons Hoekstra. Cellular level in-silico modeling of blood rheology with an improved material model for red blood cells. Frontiers in Physiology, 8:563, 2017. URL: https://www.frontiersin.org/article/10.3389/fphys.2017.00563, doi:10.3389/fphys.2017.00563.">1</a>]</span>.
-HemoCell is capable of handling large simulation domain sizes and high shear-rate
-flows providing a virtual environment to evaluate a wide palette of microfluidic
-scenarios <span id="id2">[<a class="reference internal" href="#id18" title="Gábor Závodszky, Britt van Rooij, Ben Czaja, Victor Azizi, David de Kanter, and Alfons G Hoekstra. Red blood cell and platelet diffusivity and margination in the presence of cross-stream gradients in blood flows. Physics of Fluids, 31(3):031903, 2019.">2</a>, <a class="reference internal" href="#id20" title="B Czaja, G Závodszky, V Azizi Tarksalooyeh, and AG Hoekstra. Cell-resolved blood flow simulations of saccular aneurysms: effects of pulsatility and aspect ratio. Journal of The Royal Society Interface, 15(146):20180485, 2018.">3</a>, <a class="reference internal" href="#id13" title="BJM Van Rooij, G Závodszky, AG Hoekstra, and DN Ku. Haemodynamic flow conditions at the initiation of high-shear platelet aggregation: a combined in vitro and cellular in silico study. Interface Focus, 11(1):20190126, 2021.">4</a>]</span>.</p>
-<p>For the simulation of dense flows, HemoCell employs the Immersed Boundary
-Method (IBM) to couple the immersed vesicles, e.g. RBCs, platelets (PLTs),
-leukocytes, or other custom cell types to the fluid (e.g., plasma). The particles
-are tracked using a Lagrangian discrete element approach, while the flow field is
-implemented using the lattice Boltzmann method (LBM). The current implementation
-is based on the <a class="reference external" href="https://palabos.unige.ch/">Palabos</a> library. HemoCell manages all required data structures,
-such as materials and cell models (particles), their interactions within the flow field,
-load-balancing, and communication among the processors.</p>
-<p>The library provides validated and highly optimised mechanical models for the
-simulation of red blood cells <span id="id3">[<a class="reference internal" href="#id19" title="Victor Azizi Tarksalooyeh, Gábor Závodszky, and Alfons G Hoekstra. Optimizing parallel performance of the cell based blood flow simulation software hemocell. In International Conference on Computational Science, 537–547. Springer, 2019.">5</a>, <a class="reference internal" href="#id22" title="S. Alowayyed, G. Závodszky, V. Azizi, and A.G. Hoekstra. Load balancing of parallel cell-based blood flow simulations. Journal of Computational Science, 24:1 - 7, 2018. URL: http://www.sciencedirect.com/science/article/pii/S1877750317302788, doi:https://doi.org/10.1016/j.jocs.2017.11.008.">6</a>]</span>.
-Furthermore, the library is extensible and allows to implement different mechanical
-(cell) models <span id="id4">[<a class="reference internal" href="#id16" title="Benjamin Czaja, Mario Gutierrez, Gábor Závodszky, David de Kanter, Alfons Hoekstra, and Omolola Eniola-Adefeso. The influence of red blood cell deformability on hematocrit profiles and platelet margination. PLOS Computational Biology, 16(3):e1007716, 2020.">7</a>, <a class="reference internal" href="#id21" title="Mike Haan, Gábor Závodszky, Victor Azizi, and Alfons Hoekstra. Numerical investigation of the effects of red blood cell cytoplasmic viscosity contrasts on single cell and bulk transport behaviour. Applied Sciences, 8:1616, 09 2018. doi:10.3390/app8091616.">8</a>]</span> and cell-binding techniques
-<span id="id5">[<a class="reference internal" href="#id17" title="BJM van Rooij, Gábor Závodszky, VW Azizi Tarksalooyeh, and Alfons Georgius Hoekstra. Identifying the start of a platelet aggregate by the shear rate and the cell-depleted layer. Journal of the Royal Society Interface, 16(159):20190148, 2019.">9</a>]</span> to study numerous application-specific behaviour.</p>
-<figure class="align-center" style="width: 90%">
-<img alt="Code structure of HemoCell" src="_images/hemocell-structure.png" />
-</figure>
-<p>The code is implemented in C/C++ with parallelism achieved through <a class="reference external" href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a>, although only for
-advanced use-cases the users are required to interact with the parallelism,
-which is otherwise hidden from the user. The system is build with <a class="reference external" href="https://cmake.org/">CMake</a> and runs on a variety of systems and HPC clusters (see
-<a class="reference internal" href="QuickStart.html#hemocell-getting-started"><span class="std std-ref">getting started</span></a>).</p>
-<p>Multiple examples are provided to illustrate typical use-cases of HemoCell:</p>
-<ul>
-<li><p>Developing mechanical models for different cell types and their interaction.
-These are typically quick running simulations on single processors (order of
-seconds to minutes) that aim to investigate/validate different formulations of
-mechanical models for the immersed cells, e.g.
-<a class="reference internal" href="cases/stretchcell.html#one-stretching-cell"><span class="std std-ref">shearing</span></a>,
-<a class="reference internal" href="cases/onecellshear.html#one-shearing-cell"><span class="std std-ref">stretching</span></a>, or
-<a class="reference internal" href="cases/parachuting.html#a-parachuting-cell"><span class="std std-ref">“parachuting”</span></a> of a single cell.
-Additionally, one might want to study the interaction between colliding
-particles, e.g. <a class="reference internal" href="cases/cellCollision_interior_viscosity.html#colliding-cells-with-interior-viscosity"><span class="std std-ref">Colliding cells with interior viscosity</span></a>.</p>
-<a class="reference internal image-reference" href="_images/rbc-plt-trajectory.png"><img alt="_images/rbc-plt-trajectory.png" src="_images/rbc-plt-trajectory.png" style="width: 49%;" /></a>
-<a class="reference internal image-reference" href="_images/parachuting-sideview.png"><img alt="_images/parachuting-sideview.png" src="_images/parachuting-sideview.png" style="width: 49%;" /></a>
-</li>
-<li><p>Studying large simulation domains with large number of immersed particles.
-These simulations are typically derived from straight channel flow conditions,
-where the domain size, number of immersed particles, and flow conditions are varied.
-These simulations can vary from quick running simulations on small hardware
-(desktop/workstation) to long lasting simulations on large HPC compute
-clusters with thousands of cores. Examples of smaller pipe flow cases are
-presented in <a class="reference internal" href="cases/pipeflow.html#pipe-flow"><span class="std std-ref">Pipe flow</span></a> and
-<a class="reference internal" href="cases/pipeflow_with_preinlet.html#pipe-flow-with-periodic-inflow"><span class="std std-ref">Pipe flow with periodic inflow</span></a>.</p>
-<a class="reference internal image-reference" href="_images/pipeflow-initial.png"><img alt="_images/pipeflow-initial.png" src="_images/pipeflow-initial.png" style="width: 49%;" /></a>
-<a class="reference internal image-reference" href="_images/pipeflow-large.jpg"><img alt="_images/pipeflow-large.jpg" src="_images/pipeflow-large.jpg" style="width: 49%;" /></a>
-</li>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">HemoCell</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/UvaCsl/HemoCell" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://hemocell.eu" title="Website" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-globe fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Website</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    HemoCell
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="QuickStart.html">HemoCell Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Case.html">Creating your own HemoCell Case</a></li>
 </ul>
-<p><em>When using HemoCell please cite the corresponding HemoCell paper(s)</em>
-<span id="id6">[<a class="reference internal" href="#id8" title="Gábor Závodszky, Britt van Rooij, Victor Azizi, and Alfons Hoekstra. Cellular level in-silico modeling of blood rheology with an improved material model for red blood cells. Frontiers in Physiology, 8:563, 2017. URL: https://www.frontiersin.org/article/10.3389/fphys.2017.00563, doi:10.3389/fphys.2017.00563.">1</a>]</span>.</p>
-</section>
-<section id="user-guide">
-<h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="QuickStart.html">HemoCell Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="QuickStart.html#setting-up-hemocell-from-source">Setting up HemoCell from source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QuickStart.html#compiling-hemocell-from-source">Compiling HemoCell from source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QuickStart.html#generating-initial-positions-for-cells">Generating initial positions for cells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QuickStart.html#running-a-hemocell-case">Running a HemoCell case</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QuickStart.html#case-output-folder">Case output folder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QuickStart.html#post-processing-the-output-of-a-hemocell-case">Post-processing the output of a HemoCell case</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QuickStart.html#resuming-from-a-checkpoint">Resuming from a checkpoint</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="hemocell_cases.html">Example cases</a><ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="hemocell_cases.html">Example cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="cases/onecellshear.html">One shearing cell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cases/stretchcell.html">One stretching cell</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cases/parachuting.html">A parachuting cell</a></li>
@@ -117,345 +201,514 @@ presented in <a class="reference internal" href="cases/pipeflow.html#pipe-flow">
 <li class="toctree-l2"><a class="reference internal" href="cases/pipeflow.html">Pipe flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cases/pipeflow_with_preinlet.html">Pipe flow with periodic inflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cases/capillary_flow.html">Capillary flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cases/more_examples.html">More example cases</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Case.html">Creating your own HemoCell Case</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Case.html#editing-your-newcase-cpp">Editing your newCase.cpp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Case.html#including-external-code-in-your-example">Including external code in your example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Case.html#creating-a-bare-config-xml">Creating a bare config.xml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Case.html#creating-the-initial-positions-for-the-cells">Creating the initial positions for the Cells</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Case.html#running-our-newly-created-case">Running our newly created case</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Case.html#compiling-examples-with-special-features">Compiling examples with special features</a></li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="xml_files.html">Configuration Files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="xml_files.html#config-xml">Config.xml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml_files.html#cell-xml-and-cell-pos">CELL.xml and CELL.pos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xml_files.html#config-constant-defaults-h">config/constant_defaults.h</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="concepts/index.html">Concepts</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts/overview.html">Overview: how HemoCell works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/units_and_scaling.html">Units and scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/cell_model.html">The cell model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts/parallelism.html">Parallelism and performance</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="helper_scripts.html">Helper scripts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="helper_scripts.html#hemocell-patch-patchplb-sh">hemocell/patch/patchPLB.sh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helper_scripts.html#hemocell-scripts-batchpostprocess-sh">hemocell/scripts/batchPostProcess.sh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helper_scripts.html#hemocell-scripts-system-env-sh">hemocell/scripts/[_system_]_env.sh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helper_scripts.html#hemocell-scripts-cellinfomergecsv-sh">hemocell/scripts/CellInfoMergeCSV.sh</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helper_scripts.html#convert-xmf-to-x3d-py">convert_xmf_to_x3d.py</a></li>
+</details></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="advanced_cases.html">Advanced use-cases</a><ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="advanced_cases.html">Advanced use-cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="advanced_cases/custom_cells.html">Custom cells and reading cells from STL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_cases/pure_flow_simulations.html">Running a pure fluid flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_cases/repulsion.html">Repulsive forces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_cases/saving_csv_output_only.html">Saving only the CSV output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advanced_cases/profiler.html">Profiling Hemocell performance</a></li>
 </ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization and post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helper_scripts.html">Helper scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utility tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="reference/index.html">Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="xml_files.html">Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/hemocell_api.html">The HemoCell API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/outputs.html">Output fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference/mechanical_models.html">Mechanical (cell) models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hemocell_doxygen.html">HemoCell Doxygen Documentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="community/index.html">Community</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_mistakes.html">Common mistakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Downloads.html">Downloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="community/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="community/citing.html">Citing HemoCell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="community/acknowledgments.html">Acknowledgments</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization and post-processing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="visualization.html#paraview">Paraview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualization.html#blender">Blender</a></li>
-<li class="toctree-l2"><a class="reference internal" href="visualization.html#pos-to-vtk"><code class="docutils literal notranslate"><span class="pre">pos_to_vtk</span></code></a></li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell/edit/master/doc/user_guide/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell/issues/new?title=Issue%20on%20page%20%2Findex.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>HemoCell</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-start">Where to start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-can-simulate">What you can simulate</a><ul class="visible nav section-nav flex-column">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utility tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#viewing-of-cell-packings">Viewing of cell packings</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="common_mistakes.html">Common mistakes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="common_mistakes.html#numerical-instabilities">Numerical instabilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_mistakes.html#cell-deletions">Cell deletions</a></li>
-</ul>
-</li>
-</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="hemocell">
+<h1>HemoCell<a class="headerlink" href="#hemocell" title="Link to this heading">#</a></h1>
+<a class="reference internal image-reference" href="_images/logo.png"><img alt="HemoCell" class="align-center" src="_images/logo.png" style="width: 280px;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>HemoCell</strong> (HighpErformance MicrOscopic CELlular Library) is a parallel
+computing framework for the simulation of dense deformable capsule suspensions,
+with special emphasis on blood flows and blood-related vesicles (cells). The
+library implements validated mechanical models for Red Blood Cells (RBCs) and
+is capable of reproducing emergent transport characteristics of such complex
+cellular systems <span class="bibtex-citation" id="id1">[<a class="reference internal" href="community/citing.html#id6" title="Gábor Závodszky, Britt van Rooij, Victor Azizi, and Alfons Hoekstra. Cellular level in-silico modeling of blood rheology with an improved material model for red blood cells. Frontiers in Physiology, 8:563, 2017. URL: https://www.frontiersin.org/article/10.3389/fphys.2017.00563, doi:10.3389/fphys.2017.00563.">1</a>]</span>. HemoCell handles large simulation
+domains and high shear-rate flows, providing a virtual environment to evaluate a
+wide palette of microfluidic scenarios
+<span class="bibtex-citation" id="id2">[<a class="reference internal" href="community/citing.html#id19" title="Gábor Závodszky, Britt van Rooij, Ben Czaja, Victor Azizi, David de Kanter, and Alfons G Hoekstra. Red blood cell and platelet diffusivity and margination in the presence of cross-stream gradients in blood flows. Physics of Fluids, 31(3):031903, 2019.">2</a>, <a class="reference internal" href="community/citing.html#id21" title="B Czaja, G Závodszky, V Azizi Tarksalooyeh, and AG Hoekstra. Cell-resolved blood flow simulations of saccular aneurysms: effects of pulsatility and aspect ratio. Journal of The Royal Society Interface, 15(146):20180485, 2018.">3</a>, <a class="reference internal" href="community/citing.html#id14" title="BJM Van Rooij, G Závodszky, AG Hoekstra, and DN Ku. Haemodynamic flow conditions at the initiation of high-shear platelet aggregation: a combined in vitro and cellular in silico study. Interface Focus, 11(1):20190126, 2021.">4</a>]</span>.</p>
+<p>For the simulation of dense flows, HemoCell employs the Immersed Boundary Method
+(IBM) to couple immersed vesicles — e.g. RBCs, platelets (PLTs), leukocytes, or
+custom cell types — to the fluid (e.g. plasma). The cells are tracked with a
+Lagrangian discrete-element approach, while the flow field is solved with the
+lattice Boltzmann method (LBM), built on the <a class="reference external" href="https://palabos.unige.ch/">Palabos</a> library. HemoCell manages
+all required data structures — materials and cell models, their interactions
+within the flow field, load balancing, and inter-processor communication — so
+that the parallelism is largely hidden from the user. See <a class="reference internal" href="concepts/index.html#concepts"><span class="std std-ref">Concepts</span></a> for
+the ideas behind the framework.</p>
+<figure class="align-center" id="id3" style="width: 90%">
+<img alt="Code structure of HemoCell" src="_images/hemocell-structure.png" />
+<figcaption>
+<p><span class="caption-text">High-level structure of HemoCell.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="where-to-start">
+<h2>Where to start<a class="headerlink" href="#where-to-start" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-rocket sd-mr-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.322.75h1.176a1.75 1.75 0 0 1 1.75 1.749v1.177a10.75 10.75 0 0 1-2.925 7.374l-1.228 1.304a23.699 23.699 0 0 1-1.596 1.542v5.038c0 .615-.323 1.184-.85 1.5l-4.514 2.709a.75.75 0 0 1-1.12-.488l-.963-4.572a1.305 1.305 0 0 1-.14-.129L8.04 15.96l-1.994-1.873a1.305 1.305 0 0 1-.129-.14l-4.571-.963a.75.75 0 0 1-.49-1.12l2.71-4.514c.316-.527.885-.85 1.5-.85h5.037a23.668 23.668 0 0 1 1.542-1.594l1.304-1.23A10.753 10.753 0 0 1 20.321.75Zm-6.344 4.018v-.001l-1.304 1.23a22.275 22.275 0 0 0-3.255 3.851l-2.193 3.29 1.859 1.744a.545.545 0 0 1 .034.034l1.743 1.858 3.288-2.192a22.263 22.263 0 0 0 3.854-3.257l1.228-1.303a9.251 9.251 0 0 0 2.517-6.346V2.5a.25.25 0 0 0-.25-.25h-1.177a9.252 9.252 0 0 0-6.344 2.518ZM6.5 21c-1.209 1.209-3.901 1.445-4.743 1.49a.236.236 0 0 1-.18-.067.236.236 0 0 1-.067-.18c.045-.842.281-3.534 1.49-4.743.9-.9 2.6-.9 3.5 0 .9.9.9 2.6 0 3.5Zm-.592-8.588L8.17 9.017c.23-.346.47-.685.717-1.017H5.066a.25.25 0 0 0-.214.121l-2.167 3.612ZM16 15.112c-.333.248-.672.487-1.018.718l-3.393 2.262.678 3.223 3.612-2.167a.25.25 0 0 0 .121-.214ZM17.5 8a1.5 1.5 0 1 1-3.001-.001A1.5 1.5 0 0 1 17.5 8Z"></path></svg> Getting Started</div>
+<p class="sd-card-text">Install and build HemoCell, then run and post-process your first
+simulation.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="QuickStart.html"><span class="doc">HemoCell Getting Started</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-book sd-mr-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 3.75A.75.75 0 0 1 .75 3h7.497c1.566 0 2.945.8 3.751 2.014A4.495 4.495 0 0 1 15.75 3h7.5a.75.75 0 0 1 .75.75v15.063a.752.752 0 0 1-.755.75l-7.682-.052a3 3 0 0 0-2.142.878l-.89.891a.75.75 0 0 1-1.061 0l-.902-.901a2.996 2.996 0 0 0-2.121-.879H.75a.75.75 0 0 1-.75-.75Zm12.75 15.232a4.503 4.503 0 0 1 2.823-.971l6.927.047V4.5h-6.75a3 3 0 0 0-3 3ZM11.247 7.497a3 3 0 0 0-3-2.997H1.5V18h6.947c1.018 0 2.006.346 2.803.98Z"></path></svg> Tutorials</div>
+<p class="sd-card-text">Worked example cases, from a single shearing cell to full pipe flow with
+a pre-inlet.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="hemocell_cases.html"><span class="doc">Example cases</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-light-bulb sd-mr-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c-3.81 0-6.5 2.743-6.5 6.119 0 1.536.632 2.572 1.425 3.56.172.215.347.422.527.635l.096.112c.21.25.427.508.63.774.404.531.783 1.128.995 1.834a.75.75 0 0 1-1.436.432c-.138-.46-.397-.89-.753-1.357a18.111 18.111 0 0 0-.582-.714l-.092-.11c-.18-.212-.37-.436-.555-.667C4.87 12.016 4 10.651 4 8.618 4 4.363 7.415 1 12 1s8 3.362 8 7.619c0 2.032-.87 3.397-1.755 4.5-.185.23-.375.454-.555.667l-.092.109c-.21.248-.405.481-.582.714-.356.467-.615.898-.753 1.357a.751.751 0 0 1-1.437-.432c.213-.706.592-1.303.997-1.834.202-.266.419-.524.63-.774l.095-.112c.18-.213.355-.42.527-.634.793-.99 1.425-2.025 1.425-3.561C18.5 5.243 15.81 2.5 12 2.5ZM8.75 18h6.5a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5Zm.75 3.75a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 0 1.5h-3.5a.75.75 0 0 1-.75-.75Z"></path></svg> Concepts</div>
+<p class="sd-card-text">The IBM–LBM coupling, units and scaling, the cell model, and how
+simulations are parallelised.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="concepts/index.html"><span class="doc">Concepts</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-tools sd-mr-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.875 2.292a.114.114 0 0 0-.032.018A7.239 7.239 0 0 0 4.75 8.25a7.248 7.248 0 0 0 3.654 6.297c.57.327.982.955.941 1.682v.002l-.317 6.058a.75.75 0 1 1-1.498-.078l.317-6.062v-.004c.006-.09-.047-.215-.188-.296A8.749 8.749 0 0 1 3.25 8.25a8.738 8.738 0 0 1 3.732-7.169 1.547 1.547 0 0 1 1.709-.064c.484.292.809.835.809 1.46v4.714a.25.25 0 0 0 .119.213l2.25 1.385c.08.05.182.05.262 0l2.25-1.385a.25.25 0 0 0 .119-.213V2.478c0-.626.325-1.169.81-1.461a1.547 1.547 0 0 1 1.708.064 8.741 8.741 0 0 1 3.732 7.17 8.747 8.747 0 0 1-4.41 7.598c-.14.081-.193.206-.188.296v.004l.318 6.062a.75.75 0 1 1-1.498.078l-.317-6.058v-.002c-.041-.727.37-1.355.94-1.682A7.247 7.247 0 0 0 19.25 8.25a7.239 7.239 0 0 0-3.093-5.94.114.114 0 0 0-.032-.018l-.01-.001c-.003 0-.014 0-.031.01-.036.022-.084.079-.084.177V7.19c0 .608-.315 1.172-.833 1.49l-2.25 1.385a1.75 1.75 0 0 1-1.834 0l-2.25-1.384A1.752 1.752 0 0 1 8 7.192V2.477c0-.098-.048-.155-.084-.176a.068.068 0 0 0-.031-.011l-.01.001Z"></path></svg> How-to Guides</div>
+<p class="sd-card-text">Task-oriented recipes: custom cells, pure-flow runs, repulsion,
+visualisation, and the helper tools.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="advanced_cases.html"><span class="doc">Advanced use-cases</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-list-unordered sd-mr-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.75 5.5h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5Zm0 6h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5Zm0 6h11.5a.75.75 0 0 1 0 1.5H8.75a.75.75 0 0 1 0-1.5ZM5 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM4 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 12a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg> Reference</div>
+<p class="sd-card-text">Configuration tags, the HemoCell C++ API, output fields, mechanical
+models, and the full Doxygen API.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="reference/index.html"><span class="doc">Reference</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-people sd-mr-1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8a5.5 5.5 0 1 1 8.596 4.547 9.005 9.005 0 0 1 5.9 8.18.751.751 0 0 1-1.5.045 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.499-.044 9.005 9.005 0 0 1 5.9-8.181A5.496 5.496 0 0 1 3.5 8ZM9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8.29 4c-.148 0-.292.01-.434.03a.75.75 0 1 1-.212-1.484 4.53 4.53 0 0 1 3.38 8.097 6.69 6.69 0 0 1 3.956 6.107.75.75 0 0 1-1.5 0 5.193 5.193 0 0 0-3.696-4.972l-.534-.16v-1.676l.41-.209A3.03 3.03 0 0 0 17.29 8Z"></path></svg> Community</div>
+<p class="sd-card-text">FAQ, common mistakes, downloads, how to contribute, and how to cite
+HemoCell.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="community/index.html"><span class="doc">Community</span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-you-can-simulate">
+<h2>What you can simulate<a class="headerlink" href="#what-you-can-simulate" title="Link to this heading">#</a></h2>
+<p><strong>Single-cell mechanics.</strong> Quick simulations (seconds to minutes, often on a
+single processor) used to investigate or validate mechanical models for immersed
+cells, such as <a class="reference internal" href="cases/onecellshear.html#one-shearing-cell"><span class="std std-ref">shearing</span></a>,
+<a class="reference internal" href="cases/stretchcell.html#one-stretching-cell"><span class="std std-ref">stretching</span></a>, or
+<a class="reference internal" href="cases/parachuting.html#a-parachuting-cell"><span class="std std-ref">“parachuting”</span></a> of a single cell, or
+the interaction between
+<a class="reference internal" href="cases/cellCollision_interior_viscosity.html#colliding-cells-with-interior-viscosity"><span class="std std-ref">colliding cells</span></a>.</p>
+<a class="reference internal image-reference" href="_images/rbc-plt-trajectory.png"><img alt="_images/rbc-plt-trajectory.png" src="_images/rbc-plt-trajectory.png" style="width: 49%;" />
+</a>
+<a class="reference internal image-reference" href="_images/parachuting-sideview.png"><img alt="_images/parachuting-sideview.png" src="_images/parachuting-sideview.png" style="width: 49%;" />
+</a>
+<p><strong>Bulk flows.</strong> Large domains with many immersed particles, typically derived
+from straight-channel flow. These range from quick runs on a workstation to
+long simulations on HPC clusters with thousands of cores. See
+<a class="reference internal" href="cases/pipeflow.html#pipe-flow"><span class="std std-ref">Pipe flow</span></a> and
+<a class="reference internal" href="cases/pipeflow_with_preinlet.html#pipe-flow-with-periodic-inflow"><span class="std std-ref">Pipe flow with periodic inflow</span></a>.</p>
+<a class="reference internal image-reference" href="_images/pipeflow-initial.png"><img alt="_images/pipeflow-initial.png" src="_images/pipeflow-initial.png" style="width: 49%;" />
+</a>
+<a class="reference internal image-reference" href="_images/pipeflow-large.jpg"><img alt="_images/pipeflow-large.jpg" src="_images/pipeflow-large.jpg" style="width: 49%;" />
+</a>
+<div class="tip admonition">
+<p class="admonition-title">Citing HemoCell</p>
+<p>When using HemoCell, please cite the corresponding HemoCell paper(s). See
+<a class="reference internal" href="community/citing.html#citing"><span class="std std-ref">Citing HemoCell</span></a> for details.</p>
 </div>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Downloads.html">Downloads</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="FAQ.html">Frequently Asked Questions</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="hemocell_doxygen.html">HemoCell Doxygen Documentation</a></li>
-</ul>
 </div>
-</section>
-<section id="acknowledgments">
-<h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Link to this heading">¶</a></h1>
-<p>HemoCell is developed and maintained by several researchers. The list of developpers and mainteainers at the last document update:</p>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p>Gábor Závodszky</p></td>
-<td><p>Developer and Co-PI</p></td>
-<td><p>G.Zavodszky at uva.nl</p></td>
-</tr>
-<tr class="row-even"><td><p>Alfons Hoekstra</p></td>
-<td><p>Co-PI</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Christian Spieker</p></td>
-<td><p>Developer</p></td>
-<td><p>C.J.Spieker at uva.nl</p></td>
-</tr>
-<tr class="row-even"><td><p>Jelle van Dijk</p></td>
-<td><p>Developer</p></td>
-<td><p>j.vandijk3 at uva.nl</p></td>
-</tr>
-<tr class="row-odd"><td><p>Konstantinos Asteriou</p></td>
-<td><p>Former developer</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Mark Wijzenbroek</p></td>
-<td><p>Former package maintainer</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Eleanor Broadway</p></td>
-<td><p>Former GPU developer</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Ben Czaja</p></td>
-<td><p>Former developer</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Max van der Kolk</p></td>
-<td><p>Former developer</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Lampros Mountrakis</p></td>
-<td><p>Former developer</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Victor Azizi</p></td>
-<td><p>Former developer</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Britt van Rooij</p></td>
-<td><p>Former developer</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Saad Allowayyed</p></td>
-<td><p>Former developer</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Maurits Bos</p></td>
-<td><p>Former contributor</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Daan van Ingen</p></td>
-<td><p>Former contributor</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Hendrik Cornelisse</p></td>
-<td><p>Former contributor</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Mike de Haan</p></td>
-<td><p>Former contributor</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Kevin de Vries</p></td>
-<td><p>Former contributor</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Jonathan de Bouter</p></td>
-<td><p>Former contributor</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Roland Joo-Kovacs</p></td>
-<td><p>Former contributor</p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>If you have any question please open a <a class="reference external" href="https://github.com/UvaCsl/HemoCell/discussions">Github discussion</a>.</p>
-<section id="citing-hemocell">
-<h2>Citing HemoCell<a class="headerlink" href="#citing-hemocell" title="Link to this heading">¶</a></h2>
-<p><em>When using HemoCell please cite the HemoCell paper:</em></p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>@article{Zavodszky:2017,
-  author={Závodszky, Gábor and van Rooij, Britt and Azizi, Victor and Hoekstra, Alfons},
-  title={Cellular Level In-silico Modeling of Blood Rheology with An Improved Material Model for Red Blood Cells},
-  journal={Frontiers in Physiology},
-  volume={8},
-  pages={563},
-  year={2017},
-  url={https://www.frontiersin.org/article/10.3389/fphys.2017.00563},
-  doi={10.3389/fphys.2017.00563},
-  issn={1664-042X},
-}
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
-<section id="hemocell-related-publications">
-<h1>HemoCell related publications<a class="headerlink" href="#hemocell-related-publications" title="Link to this heading">¶</a></h1>
-<div class="docutils container" id="id7">
-<div role="list" class="citation-list">
-<div class="citation" id="id8" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id6">2</a>)</span>
-<p>Gábor Závodszky, Britt van Rooij, Victor Azizi, and Alfons Hoekstra. Cellular level in-silico modeling of blood rheology with an improved material model for red blood cells. <em>Frontiers in Physiology</em>, 8:563, 2017. URL: <a class="reference external" href="https://www.frontiersin.org/article/10.3389/fphys.2017.00563">https://www.frontiersin.org/article/10.3389/fphys.2017.00563</a>, <a class="reference external" href="https://doi.org/10.3389/fphys.2017.00563">doi:10.3389/fphys.2017.00563</a>.</p>
+<div class="toctree-wrapper compound">
 </div>
-<div class="citation" id="id18" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Gábor Závodszky, Britt van Rooij, Ben Czaja, Victor Azizi, David de Kanter, and Alfons G Hoekstra. Red blood cell and platelet diffusivity and margination in the presence of cross-stream gradients in blood flows. <em>Physics of Fluids</em>, 31(3):031903, 2019.</p>
+<div class="toctree-wrapper compound">
 </div>
-<div class="citation" id="id20" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
-<p>B Czaja, G Závodszky, V Azizi Tarksalooyeh, and AG Hoekstra. Cell-resolved blood flow simulations of saccular aneurysms: effects of pulsatility and aspect ratio. <em>Journal of The Royal Society Interface</em>, 15(146):20180485, 2018.</p>
-</div>
-<div class="citation" id="id13" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">4</a><span class="fn-bracket">]</span></span>
-<p>BJM Van Rooij, G Závodszky, AG Hoekstra, and DN Ku. Haemodynamic flow conditions at the initiation of high-shear platelet aggregation: a combined in vitro and cellular in silico study. <em>Interface Focus</em>, 11(1):20190126, 2021.</p>
-</div>
-<div class="citation" id="id19" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">5</a><span class="fn-bracket">]</span></span>
-<p>Victor Azizi Tarksalooyeh, Gábor Závodszky, and Alfons G Hoekstra. Optimizing parallel performance of the cell based blood flow simulation software hemocell. In <em>International Conference on Computational Science</em>, 537–547. Springer, 2019.</p>
-</div>
-<div class="citation" id="id22" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">6</a><span class="fn-bracket">]</span></span>
-<p>S. Alowayyed, G. Závodszky, V. Azizi, and A.G. Hoekstra. Load balancing of parallel cell-based blood flow simulations. <em>Journal of Computational Science</em>, 24:1 – 7, 2018. URL: <a class="reference external" href="http://www.sciencedirect.com/science/article/pii/S1877750317302788">http://www.sciencedirect.com/science/article/pii/S1877750317302788</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.jocs.2017.11.008">doi:https://doi.org/10.1016/j.jocs.2017.11.008</a>.</p>
-</div>
-<div class="citation" id="id16" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">7</a><span class="fn-bracket">]</span></span>
-<p>Benjamin Czaja, Mario Gutierrez, Gábor Závodszky, David de Kanter, Alfons Hoekstra, and Omolola Eniola-Adefeso. The influence of red blood cell deformability on hematocrit profiles and platelet margination. <em>PLOS Computational Biology</em>, 16(3):e1007716, 2020.</p>
-</div>
-<div class="citation" id="id21" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">8</a><span class="fn-bracket">]</span></span>
-<p>Mike Haan, Gábor Závodszky, Victor Azizi, and Alfons Hoekstra. Numerical investigation of the effects of red blood cell cytoplasmic viscosity contrasts on single cell and bulk transport behaviour. <em>Applied Sciences</em>, 8:1616, 09 2018. <a class="reference external" href="https://doi.org/10.3390/app8091616">doi:10.3390/app8091616</a>.</p>
-</div>
-<div class="citation" id="id17" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">9</a><span class="fn-bracket">]</span></span>
-<p>BJM van Rooij, Gábor Závodszky, VW Azizi Tarksalooyeh, and Alfons Georgius Hoekstra. Identifying the start of a platelet aggregate by the shear rate and the cell-depleted layer. <em>Journal of the Royal Society Interface</em>, 16(159):20190148, 2019.</p>
-</div>
-<div class="citation" id="id9" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></span>
-<p>Christian J Spieker, Konstantinos Asteriou, and Gab́or Zav́odszky. Simulating initial steps of platelet aggregate formation in a cellular blood flow environment. In <em>International Conference on Computational Science</em>, 323–336. Springer, 2023.</p>
-</div>
-<div class="citation" id="id10" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></span>
-<p>Benjamin Czaja, Jonathan de Bouter, Morgan Heisler, Gábor Závodszky, Sonja Karst, Marinko Sarunic, David Maberley, and Alfons Hoekstra. The effect of stiffened diabetic red blood cells on wall shear stress in a reconstructed 3d microaneurysm. <em>Computer Methods in Biomechanics and Biomedical Engineering</em>, 25(15):1691–1709, 2022.</p>
-</div>
-<div class="citation" id="id11" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></span>
-<p>Jelle van Dijk, Gabor Zavodszky, Ana-Lucia Varbanescu, Andy D Pimentel, and Alfons Hoekstra. Building a fine-grained analytical performance model for complex scientific simulations. In <em>International Conference on Parallel Processing and Applied Mathematics</em>, 183–196. Springer, 2022.</p>
-</div>
-<div class="citation" id="id12" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
-<p>Christian J Spieker, Gábor Závodszky, Clarisse Mouriaux, Max Van der Kolk, Christian Gachet, Pierre H Mangin, and Alfons G Hoekstra. The effects of micro-vessel curvature induced elongational flows on platelet adhesion. <em>Annals of Biomedical Engineering</em>, 49:3609–3620, 2021.</p>
-</div>
-<div class="citation" id="id14" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
-<p>Benjamin Czaja, Gábor Závodszky, and Alfons Hoekstra. A heterogeneous multi-scale model for blood flow. In <em>International Conference on Computational Science</em>, 403–409. Springer, 2020.</p>
-</div>
-<div class="citation" id="id15" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
-<p>Kevin de Vries, Anna Nikishova, Benjamin Czaja, Gábor Závodszky, and Alfons G Hoekstra. Inverse uncertainty quantification of a cell model using a gaussian process metamodel. <em>International Journal for Uncertainty Quantification</em>, 2020.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="contributions">
-<h1>Contributions<a class="headerlink" href="#contributions" title="Link to this heading">¶</a></h1>
-<section id="before-you-contribute">
-<h2>Before you contribute<a class="headerlink" href="#before-you-contribute" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Please make sure that your contribution falls under HemoCell license.</p></li>
-<li><p>If you want to resolve a bug : make sure that it still exists.
-You can build the latest master branch and verify that the error is reproducable.</p></li>
-<li><p>Make sure that the bug you want to report is not already reported in our Github issues
-and that no one is working on it.</p></li>
-<li><p>If you have any questions about the software or if you are facing any issues using it
-feel free to open a <a class="reference external" href="https://github.com/UvaCsl/HemoCell/discussions">Github discussion</a>.</p></li>
-</ul>
-</section>
-<section id="code-contribution">
-<h2>Code contribution<a class="headerlink" href="#code-contribution" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Create a fork of HemoCell repository.</p></li>
-<li><p>Create a new branch from the develop branch for the issue you want to work on.
-Please give a name to your branch that is relevant to the issue.</p></li>
-<li><p>Modify/add code to your branch.</p></li>
-<li><p>Before pushing make sure you have not included unrelated changes and that the project builds properly.</p></li>
-<li><p>After you are done, push your changes and create a pull request from your branch to the develop branch.</p></li>
-</ul>
 </section>
 </section>
 
 
-            <div class="clearer"></div>
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="QuickStart.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">HemoCell Getting Started</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-start">Where to start</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-can-simulate">What you can simulate</a><ul class="visible nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="#">
-              <img class="logo" src="_static/logo.png" alt="Logo"/>
-            </a></p>
-  <div>
-    <h3><a href="#">Table of Contents</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">HemoCell</a></li>
-<li><a class="reference internal" href="#user-guide">User Guide</a><ul>
-</ul>
-</li>
-<li><a class="reference internal" href="#acknowledgments">Acknowledgments</a><ul>
-<li><a class="reference internal" href="#citing-hemocell">Citing HemoCell</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#hemocell-related-publications">HemoCell related publications</a></li>
-<li><a class="reference internal" href="#contributions">Contributions</a><ul>
-<li><a class="reference internal" href="#before-you-contribute">Before you contribute</a></li>
-<li><a class="reference internal" href="#code-contribution">Code contribution</a></li>
-</ul>
-</li>
-</ul>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By HemoCell Developers
+</p>
 
   </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="QuickStart.html"
-                          title="next chapter">HemoCell Getting Started</a></p>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Computational Science Lab, University of Amsterdam.
+      <br/>
+    
+  </p>
+
   </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
+          </footer>
+        
+
+      </main>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="QuickStart.html" title="HemoCell Getting Started"
-             >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">HemoCell 2.8 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">HemoCell</a></li> 
-      </ul>
-    </div>
-    <div class="footer" role="contentinfo">
-    &#169; Copyright 2024, Computational Science Lab, University of Amsterdam.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
-    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

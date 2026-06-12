@@ -1,0 +1,716 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The cell model &#8212; HemoCell Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=a72db6d2"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=9e1b69ee"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts/cell_model';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parallelism and performance" href="parallelism.html" />
+    <link rel="prev" title="Units and scaling" href="units_and_scaling.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.8" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">HemoCell</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/UvaCsl/HemoCell" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://hemocell.eu" title="Website" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-globe fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Website</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    HemoCell
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../QuickStart.html">HemoCell Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Case.html">Creating your own HemoCell Case</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../hemocell_cases.html">Example cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cases/onecellshear.html">One shearing cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cases/stretchcell.html">One stretching cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cases/parachuting.html">A parachuting cell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cases/cellCollision_interior_viscosity.html">Colliding cells with interior viscosity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cases/pipeflow.html">Pipe flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cases/pipeflow_with_preinlet.html">Pipe flow with periodic inflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cases/capillary_flow.html">Capillary flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cases/more_examples.html">More example cases</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Concepts</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview: how HemoCell works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units_and_scaling.html">Units and scaling</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The cell model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parallelism.html">Parallelism and performance</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How-to Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../advanced_cases.html">Advanced use-cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_cases/custom_cells.html">Custom cells and reading cells from STL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_cases/pure_flow_simulations.html">Running a pure fluid flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_cases/repulsion.html">Repulsive forces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_cases/saving_csv_output_only.html">Saving only the CSV output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_cases/profiler.html">Profiling Hemocell performance</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization.html">Visualization and post-processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helper_scripts.html">Helper scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utilities.html">Utility tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../reference/index.html">Reference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../xml_files.html">Configuration Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/hemocell_api.html">The HemoCell API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/outputs.html">Output fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/mechanical_models.html">Mechanical (cell) models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hemocell_doxygen.html">HemoCell Doxygen Documentation</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../community/index.html">Community</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../FAQ.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../common_mistakes.html">Common mistakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Downloads.html">Downloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../community/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../community/citing.html">Citing HemoCell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../community/acknowledgments.html">Acknowledgments</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell/edit/master/doc/user_guide/concepts/cell_model.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/UvaCsl/HemoCell/issues/new?title=Issue%20on%20page%20%2Fconcepts/cell_model.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/concepts/cell_model.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The cell model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-mesh">Building the mesh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-membrane-forces">The membrane forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-membrane-physics">Optional membrane physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellcell-and-cellwall-interaction">Cell–cell and cell–wall interaction</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-cell-model">
+<h1>The cell model<a class="headerlink" href="#the-cell-model" title="Link to this heading">#</a></h1>
+<p>In HemoCell every cell is a <strong>closed triangulated surface</strong> — a mesh of vertices
+(material points) connected by edges into triangles. The mesh represents the cell
+membrane (and, for red blood cells, the combined membrane + cytoskeleton). The
+mechanical behaviour of the cell emerges from forces defined on this mesh, which
+are recomputed from its instantaneous shape at every material update.</p>
+<section id="building-the-mesh">
+<h2>Building the mesh<a class="headerlink" href="#building-the-mesh" title="Link to this heading">#</a></h2>
+<p>When you add a cell type with <code class="docutils literal notranslate"><span class="pre">HemoCell::addCellType()</span></code>, the second
+argument selects how the initial mesh is constructed:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Construction method</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">RBC_FROM_SPHERE</span></code></p></td>
+<td><p>Generate a biconcave red-blood-cell shape from the analytical equation in
+the HemoCell paper, refining a sphere to at least <code class="docutils literal notranslate"><span class="pre">minNumTriangles</span></code>
+triangles.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ELLIPSOID_FROM_SPHERE</span></code></p></td>
+<td><p>Generate an ellipsoid, mainly used for the platelet (PLT) model.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WBC_SPHERE</span></code></p></td>
+<td><p>Generate a sphere representing a (white-blood-cell-like) nucleated cell.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MESH_FROM_STL</span></code></p></td>
+<td><p>Load the mesh vertices from an STL file referenced in the cell’s
+<code class="docutils literal notranslate"><span class="pre">CELL.xml</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">STRING_FROM_VERTEXES</span></code></p></td>
+<td><p>Legacy, no longer used.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The construction method, the target resolution (<code class="docutils literal notranslate"><span class="pre">minNumTriangles</span></code>), and the
+reference geometry (<code class="docutils literal notranslate"><span class="pre">radius</span></code>, <code class="docutils literal notranslate"><span class="pre">Volume</span></code>) are read from the cell’s
+<code class="docutils literal notranslate"><span class="pre">CELL.xml</span></code> (see <a class="reference internal" href="../xml_files.html#cell-xml-and-cell-pos"><span class="std std-ref">CELL.xml and CELL.pos</span></a>).</p>
+</section>
+<section id="the-membrane-forces">
+<h2>The membrane forces<a class="headerlink" href="#the-membrane-forces" title="Link to this heading">#</a></h2>
+<p>The constitutive (mechanical) model evaluates a set of force contributions over
+the mesh. Most HemoCell cell models share the same four core terms, scaled by
+coefficients you set per cell type in <code class="docutils literal notranslate"><span class="pre">CELL.xml</span></code>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 22.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Coefficient</p></th>
+<th class="head"><p>Force term</p></th>
+<th class="head"><p>Resists / represents</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kLink</span></code></p></td>
+<td><p>Link force</p></td>
+<td><p>Stretching of the membrane along mesh edges (the in-plane elastic
+response, derived from a worm-like-chain / persistence-length model).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kArea</span></code></p></td>
+<td><p>Local area force</p></td>
+<td><p>Change in the area of individual triangles (local area conservation).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">kBend</span></code></p></td>
+<td><p>Bending force</p></td>
+<td><p>Bending between adjacent triangles, i.e. the membrane’s resistance to
+being curved (set in units of <code class="docutils literal notranslate"><span class="pre">kBT</span></code>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">kVolume</span></code></p></td>
+<td><p>Volume force</p></td>
+<td><p>Change of the enclosed cell volume (quasi-incompressibility).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The deformation modes are bounded by global constants
+(<code class="docutils literal notranslate"><span class="pre">MaxCellVolumetricChange</span></code>, <code class="docutils literal notranslate"><span class="pre">MaxCellSurfaceAreaChange</span></code>,
+<code class="docutils literal notranslate"><span class="pre">MaxCellBendingAngle</span></code>, <code class="docutils literal notranslate"><span class="pre">MaxCellPersistenceLength</span></code>) defined in
+<code class="docutils literal notranslate"><span class="pre">constant_defaults.h</span></code> (the <a class="reference internal" href="../reference/mechanical_models.html#mechanical-cell-models"><span class="std std-ref">cellgroup</span></a>
+constants). These were tuned for validated RBC behaviour and improved stability
+under high shear; see <span class="bibtex-citation" id="id1">[<a class="reference internal" href="../community/citing.html#id6" title="Gábor Závodszky, Britt van Rooij, Victor Azizi, and Alfons Hoekstra. Cellular level in-silico modeling of blood rheology with an improved material model for red blood cells. Frontiers in Physiology, 8:563, 2017. URL: https://www.frontiersin.org/article/10.3389/fphys.2017.00563, doi:10.3389/fphys.2017.00563.">1</a>]</span> and <span class="bibtex-citation" id="id2">[<a class="reference internal" href="../community/citing.html#id20" title="Victor Azizi Tarksalooyeh, Gábor Závodszky, and Alfons G Hoekstra. Optimizing parallel performance of the cell based blood flow simulation software hemocell. In International Conference on Computational Science, 537–547. Springer, 2019.">6</a>]</span>.</p>
+<p>The actual force law lives in each model’s <code class="docutils literal notranslate"><span class="pre">ParticleMechanics</span></code> method (in the
+<code class="docutils literal notranslate"><span class="pre">mechanics/</span></code> directory). Different models add, remove, or modify terms — for
+example the white-blood-cell model adds an inner rigid-core term, while the
+platelet model uses a much higher maximum bending angle. See
+<a class="reference internal" href="../reference/mechanical_models.html#mechanical-cell-models"><span class="std std-ref">Mechanical (cell) models</span></a> for the catalogue,
+and the <a class="reference internal" href="../FAQ.html#frequently-asked-questions"><span class="std std-ref">FAQ</span></a> for how to implement your
+own.</p>
+</section>
+<section id="optional-membrane-physics">
+<h2>Optional membrane physics<a class="headerlink" href="#optional-membrane-physics" title="Link to this heading">#</a></h2>
+<p>Two optional effects can be enabled per cell type, at the cost of extra
+computation (both are compile-time features, see <a class="reference internal" href="../xml_files.html#constants"><span class="std std-ref">config/constant_defaults.h</span></a>):</p>
+<ul class="simple">
+<li><p><strong>Interior viscosity</strong> — gives the fluid <em>inside</em> the cell a different
+viscosity from the surrounding plasma, set via <code class="docutils literal notranslate"><span class="pre">enableInteriorViscosity</span></code> and
+<code class="docutils literal notranslate"><span class="pre">viscosityRatio</span></code> in <code class="docutils literal notranslate"><span class="pre">CELL.xml</span></code>. Requires the library to be built with
+<code class="docutils literal notranslate"><span class="pre">INTERIOR_VISCOSITY</span></code>. See
+<a class="reference internal" href="../cases/cellCollision_interior_viscosity.html#colliding-cells-with-interior-viscosity"><span class="std std-ref">Colliding cells with interior viscosity</span></a>.</p></li>
+<li><p><strong>Solidification mechanics</strong> — used to model thrombus (clot) formation by
+freezing cells in place under certain conditions, enabled with
+<code class="docutils literal notranslate"><span class="pre">HemoCell::enableSolidifyMechanics()</span></code> and the
+<code class="docutils literal notranslate"><span class="pre">SOLIDIFY_MECHANICS</span></code> build option.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">eta_m</span></code> (membrane viscosity) appears in the cell models and <code class="docutils literal notranslate"><span class="pre">CELL.xml</span></code>
+but is currently not used by the standard models. It is retained for models
+that implement a viscous membrane response.</p>
+</div>
+</section>
+<section id="cellcell-and-cellwall-interaction">
+<h2>Cell–cell and cell–wall interaction<a class="headerlink" href="#cellcell-and-cellwall-interaction" title="Link to this heading">#</a></h2>
+<p>Because of the immersed-boundary coupling, two membranes already interact when
+they are about half an IBM kernel-width apart, before the meshes visually touch.
+On top of this, an explicit short-range <strong>repulsion</strong> force can be enabled
+between cells, and between cells and solid boundaries, to prevent overlap at high
+hematocrit. See <a class="reference internal" href="../advanced_cases/repulsion.html#repulsive-forces"><span class="std std-ref">Repulsive forces</span></a>,
+<code class="docutils literal notranslate"><span class="pre">HemoCell::setRepulsion()</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">HemoCell::enableBoundaryParticles()</span></code>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="units_and_scaling.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Units and scaling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="parallelism.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Parallelism and performance</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-mesh">Building the mesh</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-membrane-forces">The membrane forces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-membrane-physics">Optional membrane physics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cellcell-and-cellwall-interaction">Cell–cell and cell–wall interaction</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By HemoCell Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Computational Science Lab, University of Amsterdam.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
