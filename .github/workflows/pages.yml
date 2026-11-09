@@ -1,0 +1,64 @@
+name: Deploy website
+
+# Publishes hemocell.eu: the static pages of this repository plus the user
+# guide, which is built from the dev branch of UvaCsl/HemoCell on every run
+# instead of being committed here.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Nightly, to pick up documentation changes on HemoCell's dev branch.
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never cancel a running deployment; queue the next one instead.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+        with:
+          path: site
+      - name: Check out HemoCell (dev)
+        uses: actions/checkout@v4
+        with:
+          repository: UvaCsl/HemoCell
+          ref: dev
+          path: hemocell
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: hemocell/doc/requirements.txt
+      - name: Install Doxygen and Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends doxygen graphviz
+      - name: Install the documentation requirements
+        run: python -m pip install -r hemocell/doc/requirements.txt
+      - name: Build the site
+        run: site/scripts/build-site.sh hemocell _site
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

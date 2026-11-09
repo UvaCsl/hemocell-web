@@ -5,8 +5,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="HemoCell2D: a validated two dimensional cell-resolved blood flow solver.">
+    <meta name="author" content="Computational Science Lab, University of Amsterdam">
 
     <title>HemoCell2D</title>
 
@@ -15,10 +15,11 @@
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="icon" 
       type="image/png" 
-      href="https://www.hemocell.eu/hemocell2d/images/RBC.png" />
+      href="images/RBC.png" />
   </head>
 
   <body>
@@ -26,7 +27,7 @@
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="https://www.hemocell.eu/">HemoCell Home</a>
+        <a class="navbar-brand" href="../">HemoCell Home</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,6 +36,7 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">HemoCell2D</a>
             </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -48,11 +50,12 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image: url('https://www.hemocell.eu/hemocell2d/images/pcom_text.png')">
+          <div class="carousel-item active" style="background-image: url('images/pcom_text.png')">
           </div>
           <!-- Slide Two - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image: url('https://www.hemocell.eu/hemocell2d/images/AR1res.png')">
+          <div class="carousel-item" style="background-image: url('images/AR1res.png')">
           </div>
+        </div>
 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" color="black" aria-hidden="false"></span>
@@ -68,7 +71,7 @@
     <!-- Page Content -->
     <div class="container">
 
-      <h1 style=font-size:100px class="my-3">HemoCell2D</h1>
+      <h1 style="font-size: clamp(48px, 12vw, 100px)" class="my-3">HemoCell2D</h1>
 
 
 
@@ -85,7 +88,7 @@
           </ul>
         </div>
         <div class="col-lg-6">
-          <a><img class="img-fluid rounded" src="https://www.hemocell.eu/hemocell2d/images/cells.png" alt=""></a>
+          <a><img class="img-fluid rounded" src="images/cells.png" alt=""></a>
         </div>
       </div>
 
@@ -94,7 +97,7 @@
       <div class="row mb-4">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-          <a class="btn btn-lg btn-secondary btn-block" href="https://gitlab.computationalscience.nl/CSL/HemoCell2D"><i class="fa fa-fw fa-github"></i> Code Repository</a>
+          <a class="btn btn-lg btn-secondary btn-block" href="https://gitlab.computationalscience.nl/CSL/HemoCell2D"><i class="fa fa-fw fa-gitlab"></i> Code Repository</a>
         </div>
         <div class="col-md-4"></div>
 
@@ -106,10 +109,10 @@
       <div class="row">
          <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a><img class="card-img-top" src="https://www.hemocell.eu/hemocell2d/images/AR1resden.png" alt=""></a>
+            <a><img class="card-img-top" src="images/AR1resden.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="http://rsif.royalsocietypublishing.org/content/15/146/20180485">Systolic flow in aneurysms</a>
+                <a href="https://doi.org/10.1098/rsif.2018.0485">Systolic flow in aneurysms</a>
               </h4>
               <p class="card-text">Time dependent (systolic) cell resolved blood flow study in cerebral aneurysms on the time and spatial scales achievable by continuous CFD models. Aspect ratios of 1,2,3,4 were probed </p>
             </div>
@@ -117,7 +120,7 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="https://www.hemocell.eu/hemocell2d/images/BC.png" alt=""></a>
+            <a><img class="card-img-top" src="images/BC.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="https://www.sciencedirect.com/science/article/pii/S0045793018302214">Boundary Conditions</a>
@@ -128,10 +131,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src='https://www.hemocell.eu/hemocell2d/images/domain.metis.png' alt=""></a>
+            <a><img class="card-img-top" src='images/domain.metis.png' alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="https://www.hemocell.eu/hemocell2d/doc/HPCN_PaSuMO_report.pdf">Parallelization</a>
+                <a href="doc/HPCN_PaSuMO_report.pdf">Parallelization</a>
               </h4>
               <p class="card-text">Parallelized using MPI allowing to efficiently run simulations using hundreds of compute cores. Domain decomposition has been achieved using the graph-partitioning tool METIS resulting in very good load balancing (equal domain sizes) and minimization of the interfaces between subdomains at which information has to be exchanged.</p>
             </div>
@@ -139,7 +142,7 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="https://www.hemocell.eu/hemocell2d/images/validation.png" alt=""></a>
+            <a><img class="card-img-top" src="images/validation.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="https://www.worldscientific.com/doi/abs/10.1142/S0129183114410058">Validation</a>
@@ -150,10 +153,10 @@
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="https://www.hemocell.eu/hemocell2d/images/RBCdiffusion.jpg" alt=""></a>
+            <a><img class="card-img-top" src="images/RBCdiffusion.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="http://iopscience.iop.org/article/10.1209/0295-5075/114/14002/meta">Shear induced diffusion of red blood cells</a>
+                <a href="https://doi.org/10.1209/0295-5075/114/14002">Shear induced diffusion of red blood cells</a>
               </h4>
               <p class="card-text">The shear-induced diffusion of the suspension exhibits a departure from the linear scaling with the shear rate, resulting in a less efficient mixing. This result is important due to the wide use of the linear scaling model in coarse-grained models using the advection diffusion equation.</p>
             </div>
@@ -162,10 +165,10 @@
 
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="http://rsfs.royalsocietypublishing.org/content/3/2/20120089.short"><img class="card-img-top" src="https://www.hemocell.eu/hemocell2d/images/whereplt.jpg" alt=""></a>
+            <a href="https://doi.org/10.1098/rsfs.2012.0089"><img class="card-img-top" src="images/whereplt.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="http://rsfs.royalsocietypublishing.org/content/3/2/20120089.short">Where do the Platelets go?</a>
+                <a href="https://doi.org/10.1098/rsfs.2012.0089">Where do the Platelets go?</a>
               </h4>
               <p class="card-text">Simulated transport behaviour of red blood cells and platelets into aneurysmal geometries with different aspect ratios (AR = 1.0, 2.0) in the presence of fast and slow blood flows (Re = 10, 100).</p>
             </div>
@@ -173,31 +176,25 @@
         </div>
       </div>
 
-    </div>
 
-
-
-     <hr>
+      <hr>
       <!-- Video Section -->
       <div class="row mb-4">
-        <div class="col-md-4"></div>
         <div class="col-md-12">
-          <video style="display:block; margin: 0 auto;" width="600" height="600" controls>
-          <source src="https://www.hemocell.eu/hemocell2d/video/CA_RT_280_500_AR1stent_1080x1080.mp4" type="video/mp4">
+          <video style="display:block; margin: 0 auto; width: 600px; max-width: 100%; height: auto;" width="600" height="600" controls preload="metadata">
+          <source src="video/CA_RT_280_500_AR1stent_1080x1080.mp4" type="video/mp4">
           Your browser does not support the video tag.
           </video>
         </div>
-        <div class="col-md-4"></div>
       </div>
 
-
-      <hr>
+    </div>
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">All rights reserved, Amsterdam, 2018</p>
-        <p class="m-0 text-center text-white"><font size ="1">This site was created by Ben Czaja, adapted from the modern business Bootstrap 4 template.</p>
+        <p class="m-0 text-center text-white"><small>This site was created by Ben Czaja, adapted from the modern business Bootstrap 4 template.</small></p>
       </div>
     </footer>
 
